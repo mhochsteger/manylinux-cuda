@@ -4,11 +4,11 @@
 
 # -----------------------------------------------------------------------------
 # How to build
-#   $ docker build -t sameli/manylinux_2_28_x86_64_cuda_12.3 -f <This-Filename> .
+#   $ docker build -t sameli/manylinux_2_28_x86_64_cuda_12.8 -f <This-Filename> .
 #
 # How to run:
 #   $ docker run -it -v/host_dir:/image_dir --entrypoint /bin/bash \
-#         manylinux_2_28_x86_64_cuda_12.3
+#         manylinux_2_28_x86_64_cuda_12.8
 # -----------------------------------------------------------------------------
 
 # -----------------
@@ -18,13 +18,13 @@
 FROM quay.io/pypa/manylinux_2_28_x86_64
 
 MAINTAINER Siavash Ameli <samei@berkeley.edu>
-LABEL Description="manylinux_2_28_x86_64 with cuda 12.3"
+LABEL Description="manylinux_2_28_x86_64 with cuda 12.8"
 
 # ------------
 # Install cuda
 # ------------
 
-ARG VER="12-3"
+ARG VER="12-8"
 ARG ARCH="x86_64"
 
 RUN dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/rhel8/x86_64/cuda-rhel8.repo
